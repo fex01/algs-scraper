@@ -62,4 +62,4 @@ If you wish to adapt the project to your specific requirements or contribute, yo
     0 * * * * /usr/bin/python3 /path/to/algs-scraper/main.py
     ```
 
-Congratulations, you've successfully set up the option for self-hosting the ALGS News Scraper. If you've opted for this, you should now start receiving updates via Telegram for the `Veranstaltungen` and `Aktuelles` sections of the ALGS website.
+Congratulations, you've successfully set up the option for self-hosting the ALGS News Scraper.
