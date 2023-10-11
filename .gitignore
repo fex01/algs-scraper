@@ -1,0 +1,8 @@
+*~
+.DS_Store
+*DiskStation*
+.idea
+
+.env
+prev_hashes.txt
+log_file.log
