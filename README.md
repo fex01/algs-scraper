@@ -29,12 +29,12 @@ If you wish to adapt the project to your specific requirements or contribute, yo
 
 1. **Clone the Repository:**
     ```bash
-    git clone <repository_url>
+    git clone https://github.com/fex01/algs-scraper.git
     ```
 
 2. **Navigate to the Project Folder:**
     ```bash
-    cd <project_folder>
+    cd algs-scraper
     ```
 
 3. **Adapt .env File:**
@@ -59,7 +59,7 @@ If you wish to adapt the project to your specific requirements or contribute, yo
     ```
     - Add a new line to execute the script at your desired frequency, for example, every hour:
     ```bash
-    0 * * * * /usr/bin/python3 /path/to/your/script.py
+    0 * * * * /usr/bin/python3 /path/to/algs-scraper/main.py
     ```
 
 Congratulations, you've successfully set up the option for self-hosting the ALGS News Scraper. If you've opted for this, you should now start receiving updates via Telegram for the `Veranstaltungen` and `Aktuelles` sections of the ALGS website.
