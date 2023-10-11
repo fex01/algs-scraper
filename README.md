@@ -14,7 +14,7 @@ The primary use case for this scraper is not to self-host it but to join the ALG
 
 ### Note: Quick & Dirty Solution
 
-This scraper is a quick and dirty solution, developed in with and by ChatGPT. It's intended to serve a specific need and might not be the most elegant or efficient codebase.
+This scraper is a quick and dirty solution, developed with and by ChatGPT. It's intended to serve a specific need and might not be the most elegant or efficient codebase.
 
 ## Self-Hosting (Optional)
 
