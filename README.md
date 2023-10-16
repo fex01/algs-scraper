@@ -62,4 +62,15 @@ If you wish to adapt the project to your specific requirements or contribute, yo
     0 * * * * /usr/bin/python3 /path/to/algs-scraper/main.py
     ```
 
-Congratulations, you've successfully set up the option for self-hosting the ALGS News Scraper.
+### Optional Monitoring Configuration
+
+If you wish to monitor the execution of the scraper, you can set up monitoring via Healthchecks.io. This is entirely optional.
+
+1. **Healthchecks.io Setup:**
+    - Register for a free account at [Healthchecks.io.](https://healthchecks.io)
+    - Create a new check and copy its ping URL.
+
+2. **Configure in .env File:**
+    - Open the `.env` file and set the `HEALTHCHECKS_URL` variable with the ping URL you obtained from Healthchecks.io.
+
+Congratulations, you've successfully set up the option for self-hosting and optionally monitoring the ALGS News Scraper.
