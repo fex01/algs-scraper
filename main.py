@@ -29,6 +29,8 @@ def fetch_website_content(url):
 def extract_relevant_section(html, tag, attrs):
     soup = BeautifulSoup(html, 'html.parser')
     section = soup.find(tag, attrs)
+    if section is None:
+        return None
     return str(section)
 
 
@@ -113,6 +115,10 @@ if __name__ == "__main__":
         for url, tag, attrs in urls_sections:
             html = fetch_website_content(url)
             section_html = extract_relevant_section(html, tag, attrs)
+
+            if section_html is None:
+                raise ValueError(f"Failed to find section with tag {tag} and attributes {attrs} on {url}")
+
             current_hash = compute_hash(section_html)
 
             section_key = 'welcome' if 'willkommen' in url else 'news'
