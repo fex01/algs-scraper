@@ -38,7 +38,7 @@ def compute_hash(text):
     return hashlib.sha256(text.encode()).hexdigest()
 
 
-def convert_to_welcome_text(section):
+def convert_to_events_text(section):
     soup = BeautifulSoup(section, 'html.parser')
     entries = soup.find_all('span')
     text_output = "Veranstaltungen\n"
@@ -96,12 +96,12 @@ def ping_healthchecks(url, retries=5, delay=5):
 if __name__ == "__main__":
     try:
         # Initialize previous hash
-        prev_hashes = {'welcome': None, 'news': None}
+        prev_hashes = {'events': None, 'news': None}
 
         try:
             with open('prev_hashes.txt', 'r') as f:
                 lines = f.readlines()
-                prev_hashes['welcome'] = lines[0].strip()
+                prev_hashes['events'] = lines[0].strip()
                 prev_hashes['news'] = lines[1].strip()
         except FileNotFoundError:
             pass
@@ -121,11 +121,11 @@ if __name__ == "__main__":
 
             current_hash = compute_hash(section_html)
 
-            section_key = 'welcome' if 'willkommen' in url else 'news'
+            section_key = 'events' if 'willkommen' in url else 'news'
 
             if current_hash != prev_hashes[section_key]:
-                if section_key == 'welcome':
-                    text_output = convert_to_welcome_text(section_html)
+                if section_key == 'events':
+                    text_output = convert_to_events_text(section_html)
                 elif section_key == 'news':
                     text_output = convert_to_news_text(section_html)
                 else:
@@ -142,7 +142,7 @@ if __name__ == "__main__":
 
         # Save the updated hashes
         with open('prev_hashes.txt', 'w') as f:
-            f.write(f"{prev_hashes['welcome']}\n")
+            f.write(f"{prev_hashes['events']}\n")
             f.write(f"{prev_hashes['news']}\n")
 
         # Ping Healthchecks.io if the script runs successfully
