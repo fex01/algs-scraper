@@ -55,7 +55,7 @@ def convert_to_events_text(section):
 def convert_to_news_text(section):
     soup = BeautifulSoup(section, 'html.parser')
     contentbox_div = soup.find('div', {'id': 'contentbox'})
-    text_output = ""
+    text_output = "Aktuelles\n"
 
     if contentbox_div:
         first_ul = contentbox_div.find('ul')
@@ -63,6 +63,7 @@ def convert_to_news_text(section):
             first_li = first_ul.find('li')
             if first_li:
                 text_output += re.sub('<[^<]+?>', '', str(first_li))
+                text_output += "\n\nDetails: https://algs.de/aktuelles.php"
     return text_output.strip()
 
 
